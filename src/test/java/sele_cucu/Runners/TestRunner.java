@@ -11,20 +11,20 @@ import sele_cucu.Managers.FileReaderManager;
 @RunWith(Cucumber.class)
 @CucumberOptions
 		(
-		features= {".//Features/"},
-		glue="stepDefinitions",
-		plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},//for extended report
+		features= {".//functionalTests/"},
+		glue= {"sele_cucu.StepDef"},
+		//plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},//for extended report
 		dryRun=false,
 		monochrome=true,
-		//plugin= {"pretty","html:test-output"}, //for normal report
+		plugin= {"pretty","html:test-output"}, //for normal report
 		tags= {"@sanity, @regression"}
 		)
 public class TestRunner {
 	
-	@AfterClass
-	public static void writeExtentReport() 
-	{
-		Reporter.loadXMLConfig(new File(FileReaderManager.getInstance().getConfigReader().getReportConfigPath()));
-	}
+//	@AfterClass
+//	public static void writeExtentReport() 
+//	{
+//		Reporter.loadXMLConfig(new File(FileReaderManager.getInstance().getConfigReader().getReportConfigPath()));
+//	}
 
 }

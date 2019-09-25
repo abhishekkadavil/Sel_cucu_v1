@@ -11,7 +11,8 @@ public class ConfigFileReader {
 	private Properties properties;
 	private final String propertyFilePath = "configs//Config.properties";
 
-	public ConfigFileReader() {
+	public ConfigFileReader() 
+	{
 		BufferedReader reader;
 		try {
 			reader = new BufferedReader(new FileReader(propertyFilePath));
@@ -33,15 +34,6 @@ public class ConfigFileReader {
 		}
 	}
 
-	public String getDriverPath() 
-	{
-		String driverPath = properties.getProperty("driverPath");
-		if (driverPath != null)
-			return driverPath;
-		else
-			throw new RuntimeException("driverPath not specified in the Configuration.properties file.");
-	}
-
 	public long getImplicitlyWait() 
 	{
 		String implicitlyWait = properties.getProperty("implicitlyWait");
@@ -53,7 +45,7 @@ public class ConfigFileReader {
 
 	public String getApplicationUrl() 
 	{
-		String url = properties.getProperty("url");
+		String url = properties.getProperty("baseURL");
 		if (url != null)
 			return url;
 		else

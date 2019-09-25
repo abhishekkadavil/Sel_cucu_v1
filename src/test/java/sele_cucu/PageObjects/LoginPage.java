@@ -6,19 +6,22 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+import sele_cucu.DataProviders.ConfigFileReader;
+import sele_cucu.Utils.BaseClass;
+
+public class LoginPage extends BaseClass {
 
 	public WebDriver ldriver;
 	public LoginPage(WebDriver rdriver)
 	{
 		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
+		PageFactory.initElements(ldriver, this);
+		configFileReader= new ConfigFileReader();
 	}
 	
 	//
 	//Variables
 	//
-	
 	
 	@FindBy(id = "Email")
 	@CacheLookup
@@ -39,11 +42,14 @@ public class LoginPage {
 	//
 	//Functions
 	//
+	public void navigateTo_HomePage() 
+	{
+		ldriver.get(configFileReader.getApplicationUrl());
+	}
 	
 	public void setUserName(String uname) {
 		txtEmail.clear();
 		txtEmail.sendKeys(uname);
-
 	}
 
 	public void setPassword(String pwd) {
