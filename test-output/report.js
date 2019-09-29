@@ -99,7 +99,7 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.step({
-  "name": "User enters Email as \"\u003cemail\u003e\" and Password as \"\u003cpassword\u003e\"",
+  "name": "User enters Username as \"\u003cemail\u003e\" and Password as \"\u003cpassword\u003e\"",
   "keyword": "And "
 });
 formatter.step({
@@ -168,14 +168,15 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User enters Email as \"admin@yourstore.com\" and Password as \"admin\"",
+  "name": "User enters Username as \"admin@yourstore.com\" and Password as \"admin\"",
   "keyword": "And "
 });
 formatter.match({
-  "location": "LoginPageSteps.user_enters_Email_as_and_Password_as(String,String)"
+  "location": "LoginPageSteps.user_enters_Username_as_and_Password_as(String,String)"
 });
 formatter.result({
-  "status": "passed"
+  "error_message": "java.lang.NullPointerException\r\n\tat sele_cucu.StepDef.LoginPageSteps.user_enters_Username_as_and_Password_as(LoginPageSteps.java:31)\r\n\tat ✽.User enters Username as \"admin@yourstore.com\" and Password as \"admin\"(file:functionalTests/Login.feature:16)\r\n",
+  "status": "failed"
 });
 formatter.step({
   "name": "Click on Login",
@@ -185,7 +186,7 @@ formatter.match({
   "location": "LoginPageSteps.click_on_Login()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
   "name": "Page Title should be \"Dashboard / nopCommerce administration\"",
@@ -195,7 +196,7 @@ formatter.match({
   "location": "LoginPageSteps.page_Title_should_be(String)"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
   "name": "User click on Log out link",
@@ -205,7 +206,7 @@ formatter.match({
   "location": "LoginPageSteps.user_click_on_Log_out_link()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
   "name": "Page Title should be \"Your store. Login\"",
@@ -215,7 +216,7 @@ formatter.match({
   "location": "LoginPageSteps.page_Title_should_be(String)"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
   "name": "Close browser",
@@ -225,7 +226,7 @@ formatter.match({
   "location": "LoginPageSteps.close_browser()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.scenario({
   "name": "Login Data Driven",
@@ -248,14 +249,15 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User enters Email as \"admin@yourstore.com\" and Password as \"admin\"",
+  "name": "User enters Username as \"admin@yourstore.com\" and Password as \"admin\"",
   "keyword": "And "
 });
 formatter.match({
-  "location": "LoginPageSteps.user_enters_Email_as_and_Password_as(String,String)"
+  "location": "LoginPageSteps.user_enters_Username_as_and_Password_as(String,String)"
 });
 formatter.result({
-  "status": "passed"
+  "error_message": "java.lang.NullPointerException\r\n\tat sele_cucu.StepDef.LoginPageSteps.user_enters_Username_as_and_Password_as(LoginPageSteps.java:31)\r\n\tat ✽.User enters Username as \"admin@yourstore.com\" and Password as \"admin\"(file:functionalTests/Login.feature:16)\r\n",
+  "status": "failed"
 });
 formatter.step({
   "name": "Click on Login",
@@ -265,7 +267,7 @@ formatter.match({
   "location": "LoginPageSteps.click_on_Login()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
   "name": "Page Title should be \"Dashboard / nopCommerce administration\"",
@@ -275,7 +277,7 @@ formatter.match({
   "location": "LoginPageSteps.page_Title_should_be(String)"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
   "name": "User click on Log out link",
@@ -285,7 +287,7 @@ formatter.match({
   "location": "LoginPageSteps.user_click_on_Log_out_link()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
   "name": "Page Title should be \"Your store. Login\"",
@@ -295,7 +297,7 @@ formatter.match({
   "location": "LoginPageSteps.page_Title_should_be(String)"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
   "name": "Close browser",
@@ -305,6 +307,6 @@ formatter.match({
   "location": "LoginPageSteps.close_browser()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 });

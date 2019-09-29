@@ -3,24 +3,22 @@ Feature: Login
 @sanity
 Scenario: Successful Login with Valid Credentials 
 	Given User Launch browser 
-	And User enters Username as "admin@yourstore.com" and Password as "admin" 
+	And User enters Username as "admin1@yourstore.com" and Password as "admin1" 
 	And Click on Login 
 	Then Page Title should be "Dashboard / nopCommerce administration" 
 	When User click on Log out link 
 	Then Page Title should be "Your store. Login" 
-	And Close browser 
 	
 @regression
 Scenario Outline: Login Data Driven 
-	Given User Launch Chrome browser 
-	And User enters Email as "<email>" and Password as "<password>" 
+	Given User Launch browser 
+	And User enters Username as "<uname>" and Password as "<pwd>" 
 	And Click on Login 
 	Then Page Title should be "Dashboard / nopCommerce administration" 
 	When User click on Log out link 
 	Then Page Title should be "Your store. Login" 
-	And Close browser 
 	
 	Examples: 
-		| email | password |
-		| admin@yourstore.com	|	admin |
-		| admin@yourstore.com	|	admin |
+		| uname | pwd |
+		| admin2@yourstore.com	|	admin2 |
+		| admin3@yourstore.com	|	admin3 |

@@ -1,5 +1,9 @@
 package sele_cucu.Enums;
 
-public class DriverType {
+public enum DriverType {
+	
+	FIREFOX,
+	CHROME,
+	INTERNETEXPLORER
 
 }

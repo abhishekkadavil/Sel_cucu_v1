@@ -1,5 +1,6 @@
 package sele_cucu.Enums;
 
-public class EnvType {
-
+public enum EnvType {
+	LOCAL,
+	REMOTE,
 }

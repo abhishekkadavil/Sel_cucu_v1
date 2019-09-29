@@ -5,33 +5,34 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import sele_cucu.Managers.FileReaderManager;
 
-import sele_cucu.DataProviders.ConfigFileReader;
-import sele_cucu.Utils.BaseClass;
-
-public class LoginPage extends BaseClass {
+public class LoginPage {
 
 	public WebDriver ldriver;
 	public LoginPage(WebDriver rdriver)
 	{
 		ldriver = rdriver;
 		PageFactory.initElements(ldriver, this);
-		configFileReader= new ConfigFileReader();
 	}
 	
 	//
 	//Variables
 	//
 	
-	@FindBy(id = "Email")
+	@FindBy(id = "email")
 	@CacheLookup
 	WebElement txtEmail;
 
-	@FindBy(id = "Password")
+	@FindBy(id = "passwd")
 	@CacheLookup
 	WebElement txtPassword;
+	
+	@FindBy(xpath = "//a[@class='login']")
+	@CacheLookup
+	WebElement btnSign;
 
-	@FindBy(xpath = "//input[@value='Log in']")
+	@FindBy(id = "SubmitLogin")
 	@CacheLookup
 	WebElement btnLogin;
 
@@ -44,10 +45,16 @@ public class LoginPage extends BaseClass {
 	//
 	public void navigateTo_HomePage() 
 	{
-		ldriver.get(configFileReader.getApplicationUrl());
+		ldriver.get(FileReaderManager.getInstance().getConfigReader().getApplicationUrl());
+	}
+	
+	public void clickSignIn() 
+	{
+		btnSign.click();
 	}
 	
 	public void setUserName(String uname) {
+		clickSignIn();
 		txtEmail.clear();
 		txtEmail.sendKeys(uname);
 	}
