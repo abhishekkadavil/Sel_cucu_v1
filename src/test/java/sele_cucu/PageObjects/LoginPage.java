@@ -6,6 +6,7 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import sele_cucu.Managers.FileReaderManager;
+import sele_cucu.testDataTypes.TestData.Credentials;
 
 public class LoginPage {
 
@@ -70,6 +71,12 @@ public class LoginPage {
 
 	public void clickLogout() {
 		lnkLogout.click();
+	}
+	
+	public void fill_credsDetails(Credentials creds) 
+	{
+		setUserName(creds.username);
+		setPassword(creds.password);
 	}
 	
 }

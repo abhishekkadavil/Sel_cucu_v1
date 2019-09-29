@@ -14,7 +14,7 @@ import sele_cucu.Managers.FileReaderManager;
 		features= {".//functionalTests/"},
 		glue= {"sele_cucu.StepDef"},
 		//plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},//for extended report
-		dryRun=false,
+		dryRun=true,
 		monochrome=true,
 		plugin= {"pretty","html:test-output"}, //for normal report
 		tags= {"@sanity, @regression"}

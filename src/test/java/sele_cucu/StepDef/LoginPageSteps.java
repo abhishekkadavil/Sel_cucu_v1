@@ -4,8 +4,11 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import sele_cucu.Context.TestContext;
+import sele_cucu.Managers.FileReaderManager;
 import sele_cucu.Managers.WebDriverManager;
 import sele_cucu.PageObjects.LoginPage;
+import sele_cucu.testDataTypes.TestData;
+import sele_cucu.testDataTypes.TestData.Credentials;
 
 public class LoginPageSteps {
 	
@@ -46,6 +49,13 @@ public class LoginPageSteps {
 	@When("User click on Log out link")
 	public void user_click_on_Log_out_link() {
 	    
+	}
+	
+	@Given("User enters user credentials {string}")
+	public void user_enters_user_credentials(String testDataId) 
+	{
+		//Credentials creds=FileReaderManager.getInstance().getJsonReader().getTestDataByID(testDataId);
+		//loginPage.fill_credsDetails(creds);
 	}
 
 }

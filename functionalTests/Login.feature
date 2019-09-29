@@ -22,3 +22,17 @@ Scenario Outline: Login Data Driven
 		| uname | pwd |
 		| admin2@yourstore.com	|	admin2 |
 		| admin3@yourstore.com	|	admin3 |
+		
+@regression
+Scenario Outline: Login Data Driven Via Json 
+	Given User Launch browser 
+	And User enters user credentials "<credentials>"
+	And Click on Login 
+	Then Page Title should be "Dashboard / nopCommerce administration" 
+	When User click on Log out link 
+	Then Page Title should be "Your store. Login" 
+	
+	Examples: 
+		| credentials |
+		| Cred1	|
+		| Cred2	|
