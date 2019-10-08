@@ -8,8 +8,6 @@ import sele_cucu.Enums.Context;
 import sele_cucu.Managers.FileReaderManager;
 import sele_cucu.Managers.WebDriverManager;
 import sele_cucu.PageObjects.LoginPage;
-import sele_cucu.testDataTypes.TestData;
-import sele_cucu.testDataTypes.TestData.Credentials;
 
 public class LoginPageSteps {
 	

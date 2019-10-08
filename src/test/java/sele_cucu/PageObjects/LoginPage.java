@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import sele_cucu.Context.TestContext;
 import sele_cucu.Managers.FileReaderManager;
 import sele_cucu.Utils.Wait;
-import sele_cucu.testDataTypes.TestData.Credentials;
+import sele_cucu.testDataTypes.TestData;
 
 public class LoginPage {
 
@@ -77,10 +77,10 @@ public class LoginPage {
 		lnkLogout.click();
 	}
 	
-	public void fill_credsDetails(Credentials creds) 
+	public void fill_credsDetails(TestData testData) 
 	{
-		setUserName(creds.username);
-		setPassword(creds.password);
+		setUserName(testData.username);
+		setPassword(testData.password);
 	}
 	
 }
