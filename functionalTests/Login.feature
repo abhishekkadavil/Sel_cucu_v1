@@ -23,7 +23,7 @@ Scenario Outline: Login Data Driven
 		| admin2@yourstore.com	|	admin2 |
 		| admin3@yourstore.com	|	admin3 |
 		
-@regression
+@regression1
 Scenario Outline: Login Data Driven Via Json 
 	Given User Launch browser 
 	And User enters user credentials "<credentials>"

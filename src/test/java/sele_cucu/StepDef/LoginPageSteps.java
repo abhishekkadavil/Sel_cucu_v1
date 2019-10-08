@@ -4,6 +4,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import sele_cucu.Context.TestContext;
+import sele_cucu.Enums.Context;
 import sele_cucu.Managers.FileReaderManager;
 import sele_cucu.Managers.WebDriverManager;
 import sele_cucu.PageObjects.LoginPage;
@@ -39,6 +40,9 @@ public class LoginPageSteps {
 	public void click_on_Login() 
 	{
 	    loginPage.clickLogin();
+		testContext.scenarioContext.setContext(Context.LOGIN_ERROR, "Error while login");
+		String LOGIN_ERR = (String)testContext.scenarioContext.getContext(Context.LOGIN_ERROR);
+		System.out.println(LOGIN_ERR);
 	}
 
 	@Then("Page Title should be {string}")
