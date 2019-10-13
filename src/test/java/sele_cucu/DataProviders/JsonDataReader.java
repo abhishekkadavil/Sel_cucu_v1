@@ -14,7 +14,7 @@ import sele_cucu.testDataTypes.TestData;
 
 public class JsonDataReader {
 
-	private final String testDataFilePath = FileReaderManager.getInstance().getConfigReader().getTestDataResourcePath()	+ "TestData.json";
+	private final String testDataFilePath = FileReaderManager.getInstance().getConfigReader().getTestDataResourcePath();	//+ "TestData.json";
 	private List<TestData> testdata;
 
 	public JsonDataReader() 
@@ -51,7 +51,7 @@ public class JsonDataReader {
 
 	public final TestData getTestDataByID(String Id) 
 	{
-		return testdata.stream().filter(x -> x.id.equalsIgnoreCase(Id)).findAny().get();
+		return testdata.stream().filter(x -> x.tcId.equalsIgnoreCase(Id)).findAny().get();
 	}
 
 }

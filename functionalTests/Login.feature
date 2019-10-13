@@ -22,8 +22,23 @@ Scenario Outline: Login Data Driven
 		| uname | pwd |
 		| admin2@yourstore.com	|	admin2 |
 		| admin3@yourstore.com	|	admin3 |
-		
+
 @regression1
+Scenario Outline: Login Data Driven Via Json 
+	Given User Launch browser
+	And Read tes data for "<TC_ID>" from Json file 
+	And User enters Username and Password 
+	And Click on Login 
+	Then Page Title should be "Dashboard / nopCommerce administration" 
+	When User click on Log out link 
+	Then Page Title should be "Your store. Login" 
+	
+	Examples: 
+		| TC_ID |
+		| 001	|
+		| 002	|
+		
+@regression2
 Scenario Outline: Login Data Driven Via Json 
 	Given User Launch browser 
 	And User enters user credentials "<credentials>"
@@ -33,6 +48,6 @@ Scenario Outline: Login Data Driven Via Json
 	Then Page Title should be "Your store. Login" 
 	
 	Examples: 
-		| credentials |
-		| Cred1	|
-		| Cred2	|
+		| TC_ID |
+		| 001	|
+		| 002	|

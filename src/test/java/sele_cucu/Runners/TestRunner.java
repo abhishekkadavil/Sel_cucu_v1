@@ -17,12 +17,12 @@ import sele_cucu.Managers.FileReaderManager;
 		glue= {"sele_cucu.StepDef"},
 		//plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},//for extended report
 		//plugin = {"com.cucumber.listener.ExtentCucumberFormatter:test-output/report.html"},
-		plugin = { "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},//for extended report
+		//plugin = { "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},//for extended report
 		dryRun=false,
 		monochrome=true,
-		//plugin= {"pretty","html:test-output"}, //for normal report
+		plugin= {"pretty","html:test-output"}, //for normal report
 		//tags= {"@sanity, @regression"}
-		tags= {"@sanity"}
+		tags= {"@regression1"}
 		)
 public class TestRunner {
 	

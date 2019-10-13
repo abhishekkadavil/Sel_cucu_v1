@@ -77,10 +77,4 @@ public class LoginPage {
 		lnkLogout.click();
 	}
 	
-	public void fill_credsDetails(TestData testData) 
-	{
-		setUserName(testData.username);
-		setPassword(testData.password);
-	}
-	
 }

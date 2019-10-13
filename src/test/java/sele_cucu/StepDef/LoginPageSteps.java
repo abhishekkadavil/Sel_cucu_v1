@@ -8,8 +8,9 @@ import sele_cucu.Enums.Context;
 import sele_cucu.Managers.FileReaderManager;
 import sele_cucu.Managers.WebDriverManager;
 import sele_cucu.PageObjects.LoginPage;
+import sele_cucu.testDataTypes.TestData;
 
-public class LoginPageSteps {
+public class LoginPageSteps extends BaseClass {
 	
 	public LoginPage loginPage;
 	public WebDriverManager webDriverManager;
@@ -32,6 +33,19 @@ public class LoginPageSteps {
 	{
 	    loginPage.setUserName(uname);
 	    loginPage.setPassword(pwd);
+	}
+	
+	@Given("User enters Username and Password")
+	public void user_enters_Username_and_Password() 
+	{
+		loginPage.setUserName(testdata.username);
+	    loginPage.setPassword(testdata.password);	    
+	}
+	
+	@Given("Read tes data for {string} from Json file")
+	public void read_tes_data_for_from_Json_file(String tc_ID) 
+	{
+		testdata=FileReaderManager.getInstance().getJsonReader().getTestDataByID(tc_ID);	    
 	}
 
 	@When("Click on Login")
